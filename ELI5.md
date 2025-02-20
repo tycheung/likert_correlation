@@ -10,9 +10,7 @@ Spearman's correlation measures the strength and direction of the relationship b
 2. Compute the difference between ranks for each pair.
 3. Use a formula to compute correlation:
    
-   \[
-   \rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
-   \]
+   $$\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}$$
    
    where:
    - \( d_i \) is the difference between ranks,
@@ -31,9 +29,7 @@ Kendall's tau also measures the association between two ranked variables but in 
 2. Count the number of **concordant** (both values increase or decrease together) and **discordant** (one value increases while the other decreases) pairs.
 3. Use the formula:
    
-   \[
-   \tau = \frac{(\text{Number of concordant pairs}) - (\text{Number of discordant pairs})}{\frac{1}{2} n(n-1)}
-   \]
+   $$\tau = \frac{(\text{Number of concordant pairs}) - (\text{Number of discordant pairs})}{\frac{1}{2} n(n-1)}$$
 
 ### When to Use:
 - When **data has many ties**, as Kendall’s tau handles them better.
@@ -48,4 +44,8 @@ Kendall's tau also measures the association between two ranked variables but in 
 
 ## Conclusion
 Both Kendall's tau and Spearman's rho are useful for measuring relationships between ranked data, such as Likert scale responses. The choice depends on the presence of ties, sample size, and computational needs.
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
