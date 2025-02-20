@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likert Scale Correlation Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-2xl font-bold mb-6 text-center">Likert Scale Correlation Analysis</h1>
+        
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="file">
+                Upload Data File (CSV or Excel)
+            </label>
+            <input type="file" id="file" accept=".csv,.xlsx,.xls" 
+                   class="w-full p-2 border rounded">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="col1">
+                    First Column
+                </label>
+                <select id="col1" class="w-full p-2 border rounded" disabled>
+                    <option value="">Select column...</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="col2">
+                    Second Column
+                </label>
+                <select id="col2" class="w-full p-2 border rounded" disabled>
+                    <option value="">Select column...</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="analyze" 
+                class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400"
+                disabled>
+            Analyze Correlations
+        </button>
+
+        <div id="loading" class="hidden mt-4 text-center">
+            <p class="text-gray-600">Processing...</p>
+        </div>
+
+        <div id="results" class="mt-6 hidden">
+            <h2 class="text-xl font-bold mb-4">Analysis Results</h2>
+            <div class="bg-gray-50 p-4 rounded">
+                <div id="recommendation" class="mb-4"></div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h3 class="font-bold mb-2">Kendall's tau</h3>
+                        <div id="kendall-results"></div>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2">Spearman's rho</h3>
+                        <div id="spearman-results"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6">
+                <h2 class="text-xl font-bold mb-4">Visualizations</h2>
+                <div id="plotly-div" style="width: 100%; min-height: 1600px;" class="mx-auto max-w-4xl"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
