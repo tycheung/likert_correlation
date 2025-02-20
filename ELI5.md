@@ -44,8 +44,3 @@ Kendall's tau also measures the association between two ranked variables but in 
 
 ## Conclusion
 Both Kendall's tau and Spearman's rho are useful for measuring relationships between ranked data, such as Likert scale responses. The choice depends on the presence of ties, sample size, and computational needs.
-
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
