@@ -25,7 +25,7 @@ class AnalysisResults:
     spearman_interpretation: str
 
 
-class LikertAnalyzer:
+class Analyzer:
     """Analyzes correlations between Likert scale variables."""
 
     def __init__(self):

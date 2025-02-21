@@ -5,7 +5,7 @@ from pathlib import Path
 from flask import Flask, jsonify, render_template, request, Response
 from werkzeug.utils import secure_filename
 
-from .analyzer import LikertAnalyzer
+from .analyzer import Analyzer
 
 def create_app(base_dir: Path = None) -> Flask:
     """Create and configure the Flask application."""
@@ -24,7 +24,7 @@ def create_app(base_dir: Path = None) -> Flask:
     app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
 
     # Global analyzer instance
-    analyzer = LikertAnalyzer()
+    analyzer = Analyzer()
 
     @app.route('/')
     def index():
